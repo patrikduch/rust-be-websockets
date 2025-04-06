@@ -18,18 +18,7 @@ git clone https://github.com/patrikduch/rust-be-websockets.git
 cd rust-be-websockets
 ```
 
-### 2. Set Up Environment Variables
-
-Copy the example `.env.example` file and configure it:
-
-```sh
-cp .env.example .env
-```
-
-Modify the `.env` file with your database credentials and other configurations.
-
-
-### 3. Build and Run the Application
+### 2. Build and Run the Application
 
 ```sh
 cargo build
@@ -37,7 +26,7 @@ cargo run
 ```
 
 
-### 4. Dockerization
+### 3. Dockerization
 
 ```sh
 docker-compose up -d
