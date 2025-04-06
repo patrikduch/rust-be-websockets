@@ -24,10 +24,3 @@ cd rust-be-websockets
 cargo build
 cargo run
 ```
-
-
-### 3. Dockerization
-
-```sh
-docker-compose up -d
-```
