@@ -36,7 +36,7 @@ COPY src ./src
 
 # Build the actual application
 RUN cargo build --release --target x86_64-unknown-linux-musl && \
-    strip target/x86_64-unknown-linux-musl/release/rust-be-template
+    strip target/x86_64-unknown-linux-musl/release/rust-be-websockets
 
 # Stage 2: Runtime
 FROM alpine:latest
@@ -51,11 +51,11 @@ ENV DATABASE_URL=${DATABASE_URL}
 WORKDIR /app
 
 # Copy only the executable from builder
-COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/rust-be-template /app/
+COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/rust-be-websockets /app/
 
 # Make sure the executable is executable and has port binding capability
-RUN chmod +x /app/rust-be-template && \
-    setcap 'cap_net_bind_service=+ep' /app/rust-be-template
+RUN chmod +x /app/rust-be-websockets && \
+    setcap 'cap_net_bind_service=+ep' /app/rust-be-websockets
 
 # Create non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
@@ -68,4 +68,4 @@ EXPOSE 80
 USER appuser
 
 # Set executable as entrypoint
-ENTRYPOINT ["/app/rust-be-template"]
+ENTRYPOINT ["/app/rust-be-websockets"]
