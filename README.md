@@ -1,6 +1,6 @@
 # Overview
 
-`rust-be-template` is a boilerplate template for a backend service written in Rust. It provides a solid foundation with essential dependencies and configurations to streamline backend development.
+`rust-be-websockets` is a boilerplate template for a backend service written in Rust. It provides a solid foundation with essential dependencies and configurations to streamline backend development.
 
 ## Features
 
