@@ -1,0 +1,60 @@
+[package]
+name = "rust-be-websockets"
+version = "1.0.0"
+edition = "2021"
+authors = ["Patrik Duch <duchpatrik@icloud.com"]
+
+# Expose your code as a library
+[lib]
+path = "src/lib.rs"
+
+# Binary target
+[[bin]]
+name = "solana-bot"
+path = "src/main.rs"
+
+[features]
+default = []
+
+[dependencies]
+# Web framework
+actix = "0.13"
+
+once_cell = "1.18"
+
+actix-web = "4.0"
+actix-web-actors = "4"
+reqwest = { version = "0.11", features = ["json"] }
+rust_decimal = "1.32"
+rust_decimal_macros = "1.20"
+
+
+actix-cors = "0.6"
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+
+
+# Environment config & logging
+dotenv = "0.15"
+env_logger = "0.10"
+log = "0.4"
+lazy_static = "1.4"
+
+# Futures (useful for async)
+futures = "0.3"
+
+# TLS (if needed for PostgreSQL or HTTPS)
+openssl = { version = "0.10", features = ["vendored"] }
+
+# Error handling (optional but recommended)
+thiserror = "1.0"
+
+[dev-dependencies]
+# Test support
+actix-rt = "2.8"
