@@ -24,3 +24,18 @@ cd rust-be-websockets
 cargo build
 cargo run
 ```
+
+
+docker build -t rust-be-template .
+
+docker run --name rust-be-container -p 8080:8080 --env RUST_LOG=debug rust-be-template
+
+docker-compose up -d
+
+docker build -t rust-be-template .
+
+docker tag rust-be-template:latest patrikduch/rust-be-template:latest
+
+docker push patrikduch/rust-be-template:latest
+
+cargo fix --allow-dirty --tests

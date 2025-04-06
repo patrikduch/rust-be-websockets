@@ -10,7 +10,7 @@ path = "src/lib.rs"
 
 # Binary target
 [[bin]]
-name = "solana-bot"
+name = "rust-be-websockets"
 path = "src/main.rs"
 
 [features]
