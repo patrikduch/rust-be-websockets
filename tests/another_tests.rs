@@ -1,5 +1,5 @@
 use actix_web::{test, web, App, http::StatusCode};
-use rust_be_template::routes;
+use rust_be_websockets::routes;
 
 #[actix_web::test]
 async fn test_index_returns_200() {
